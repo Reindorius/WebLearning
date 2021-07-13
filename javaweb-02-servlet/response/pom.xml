@@ -2,7 +2,7 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+  <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <artifactId>javaweb-02-servlet</artifactId>
@@ -10,15 +10,12 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-
-  <modelVersion>4.0.0</modelVersion>
-
   <groupId>org.example</groupId>
-  <artifactId>servlet01</artifactId>
+  <artifactId>response</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>servlet01 Maven Webapp</name>
+  <name>response Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -38,7 +35,7 @@
   </dependencies>
 
   <build>
-    <finalName>servlet01</finalName>
+    <finalName>response</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
@@ -72,5 +69,23 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>*.properties</include>
+          <include>*.xml</include>
+        </includes>
+      </resource>
+
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>

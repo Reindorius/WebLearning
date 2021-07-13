@@ -10,6 +10,11 @@
         <servlet-name>hello</servlet-name>
         <servlet-class>com.reindorius.servlet.HelloServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>error</servlet-name>
+        <servlet-class>com.reindorius.servlet.ErrorPage</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
@@ -25,5 +30,10 @@
     <servlet-mapping>
         <servlet-name>hello</servlet-name>
         <url-pattern>/ThisHello</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>error</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
