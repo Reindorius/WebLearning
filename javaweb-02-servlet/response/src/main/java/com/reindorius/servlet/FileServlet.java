@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
 
-public class FileServlet extends HttpServlet {
+public class FileServlet extends HttpServlet    {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        1. 获取下载文件的路径
@@ -30,7 +30,7 @@ public class FileServlet extends HttpServlet {
         ServletOutputStream servletOutputStream = resp.getOutputStream();
 //        7. 讲FileOutputStream流写入buffer缓冲区
         while((len=in.read(buffer))>0)
-        {
+        { 
             servletOutputStream.write(buffer,0,len);
         }
         in.close();
