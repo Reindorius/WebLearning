@@ -13,4 +13,37 @@
         <servlet-name>cookie01</servlet-name>
         <url-pattern>/cookie01</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>session01</servlet-name>
+        <servlet-class>com.reindorius.servlet.SessionDemo01</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>session01</servlet-name>
+        <url-pattern>/session01</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>session02</servlet-name>
+        <servlet-class>com.reindorius.servlet.SessionDemo02</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>session02</servlet-name>
+        <url-pattern>/session02</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>session03</servlet-name>
+        <servlet-class>com.reindorius.servlet.Session03</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>session03</servlet-name>
+        <url-pattern>/session03</url-pattern>
+    </servlet-mapping>
+
+    <!--  设置Session的默认失效时间  -->
+    <session-config>
+        <!--单位为分钟-->
+        <session-timeout>1</session-timeout>
+    </session-config>
 </web-app>
