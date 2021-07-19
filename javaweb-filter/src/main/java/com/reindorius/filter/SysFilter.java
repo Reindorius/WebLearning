@@ -28,7 +28,7 @@ public class SysFilter implements javax.servlet.Filter{
         if(request1.getSession().getAttribute(Constant.USER_SESSION)==null) {
             response1.sendRedirect("/error.jsp");
         }
-        
+
 
         chain.doFilter(request1,response1);
     }
