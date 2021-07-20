@@ -29,6 +29,18 @@
     <bean id="user1" class="com.reindorius.pojo.User"
         p:data1="1" p:data2="0.2222" p:data3="REINDORIUS"/>
 
+    <bean id="user2" class="com.reindorius.pojo.User" scope="singleton">
+        <constructor-arg name="data1" value="2"/>
+        <constructor-arg name="data2" value="5.665"/>
+        <constructor-arg name="data3" value="Sapientiam"/>
+    </bean>
+
+    <bean id="user3" class="com.reindorius.pojo.User" scope="prototype">
+        <constructor-arg name="data1" value="2"/>
+        <constructor-arg name="data2" value="5.665"/>
+        <constructor-arg name="data3" value="Sapientiam"/>
+    </bean>
+
     <bean id="student" class="com.reindorius.pojo2.Student">
         <property name="name" value="Reindorius"/>
         <property name="address" ref="address"/>
@@ -72,7 +84,7 @@
     </bean>
 
     <bean id="address" class="com.reindorius.pojo2.Address">
-
+        <property name="address" value="Chengdu"/>
     </bean>
 </beans>
 

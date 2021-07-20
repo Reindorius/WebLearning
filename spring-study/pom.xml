@@ -11,6 +11,9 @@
     <modules>
         <module>spring01-ioc</module>
         <module>spring02-hellospring</module>
+        <module>spring03-autowired</module>
+        <module>spring04-annotation</module>
+        <module>spring05-appconfig</module>
     </modules>
 
     <properties>

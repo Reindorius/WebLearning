@@ -28,5 +28,63 @@
     <!--  Remember to add : xmlns:p="http://www.springframework.org/schema/p" in order to use p-namespace  -->
     <bean id="user1" class="com.reindorius.pojo.User"
         p:data1="1" p:data2="0.2222" p:data3="REINDORIUS"/>
+
+    <bean id="user2" class="com.reindorius.pojo.User" scope="singleton">
+        <constructor-arg name="data1" value="2"/>
+        <constructor-arg name="data2" value="5.665"/>
+        <constructor-arg name="data3" value="Sapientiam"/>
+    </bean>
+
+    <bean id="user3" class="com.reindorius.pojo.User" scope="prototype">
+        <constructor-arg name="data1" value="2"/>
+        <constructor-arg name="data2" value="5.665"/>
+        <constructor-arg name="data3" value="Sapientiam"/>
+    </bean>
+
+    <bean id="student" class="com.reindorius.pojo2.Student">
+        <property name="name" value="Reindorius"/>
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>A Realm Reborn</value>
+                <value>Heavensward</value>
+                <value>Stormblood</value>
+                <value>Shadowbringer</value>
+                <value>Endwalker</value>
+            </array>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>Unending Coil of Bahamut</value>
+                <value>Weapon's Refrain</value>
+                <value>The Epic of Alexander</value>
+            </list>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="E12S" value="Eden's Promise"/>
+                <entry key="O12S" value="Omega Prime"/>
+                <entry key="A12S" value="Alexander Prime"/>
+                <entry key="T13" value="Bahamut Prime"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>Final Fantasy XIV</value>
+                <value>Genshin Impact</value>
+                <value>Monster Hunter World</value>
+            </set>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="AST">Astrologian</prop>
+                <prop key="SCH">Scholar</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="address" class="com.reindorius.pojo2.Address">
+        <property name="address" value="Chengdu"/>
+    </bean>
 </beans>
 

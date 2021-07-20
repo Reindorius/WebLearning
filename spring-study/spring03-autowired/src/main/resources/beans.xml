@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启注解的支持-->
+    <context:annotation-config/>
+    <bean id="cat" class="com.reindorius.pojo.Cat"/>
+    <bean id="anotherCat" class="com.reindorius.pojo.Cat"/>
+    <bean id="dog" class="com.reindorius.pojo.Dog"/>
+    <bean id="someOtherDog" class="com.reindorius.pojo.Dog"/>
+    <bean id="person" class="com.reindorius.pojo.Person"/>
+
+<!--    &lt;!&ndash;  非自动装配，需要写ref，在大型项目中会很冗余  &ndash;&gt;-->
+<!--    <bean id="cat" class="com.reindorius.pojo.Cat"/>-->
+<!--    <bean id="dog" class="com.reindorius.pojo.Dog"/>-->
+
+<!--    <bean id="person" class="com.reindorius.pojo.Person">-->
+<!--        <property name="cat" ref="cat"/>-->
+<!--        <property name="dog" ref="dog"/>-->
+<!--        <property name="name" value="Reindorius Sapiemtiam"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;自动装配-->
+<!--        byName: 会自动在容器上下文中查找和自己对象set方法后面的值对应的beanid-->
+<!--            弊端：beanid必须唯一而且和对象定义中的名字相同-->
+<!--        byType: 会自动在容器上下文中查找和自己对象属性类型相同的beanid-->
+<!--            弊端：不适用于有多个相同类型的属性的情况-->
+<!--    &ndash;&gt;-->
+<!--    <bean id="person1" class="com.reindorius.pojo.Person" autowire="byName">-->
+<!--        <property name="name" value="Reindorius"/>-->
+<!--    </bean>-->
+</beans>

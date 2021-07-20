@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring02-hellospring" />
+        <module name="spring03-autowired" />
+        <module name="spring04-annotation" />
         <module name="spring01-ioc01" />
+        <module name="spring02-hellospring" />
+        <module name="spring05-appconfig" />
       </profile>
     </annotationProcessing>
   </component>
