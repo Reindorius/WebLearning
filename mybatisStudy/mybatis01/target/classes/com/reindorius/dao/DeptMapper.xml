@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--中文注释-->
+<mapper namespace="com.reindorius.dao.DeptDao">
+    <!--SELECT-->
+    <select id="getDepartmentList" resultType="com.reindorius.pojo.dept">
+        select distinct * from db01.dept
+    </select>
+    
+    <select id="getDeptByDeptno" resultType="com.reindorius.pojo.dept" parameterType="int">
+        select distinct * from db01.dept where deptno = #{deptno}
+    </select>
+
+    <!--对象中的属性可以直接取出来-->
+    <select id="addDept" parameterType="com.reindorius.pojo.dept">
+        insert into db01.dept (deptno,dname,loc) values (#{deptno},#{dname},#{loc});
+    </select>
+    
+    <select id="updateDept" parameterType="com.reindorius.pojo.dept">
+        update db01.dept set loc=#{loc} where deptno=#{deptno} and dname=#{dname};
+    </select>
+
+    <select id="deleteDept" parameterType="int">
+        delete from db01.dept where deptno=#{deptno};
+    </select>
+
+    <select id="getDeptByDeptno2" parameterType="java.util.Map" resultType="com.reindorius.pojo.dept">
+        select * from db01.dept where dname=#{dname} and loc=#{loc};
+    </select>
+
+    <select id="getDeptLike" resultType="com.reindorius.pojo.dept">
+        select * from db01.dept where loc like "%"#{value}"%";
+    </select>
+</mapper>
